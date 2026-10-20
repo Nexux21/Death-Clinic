@@ -22,7 +22,7 @@ public class Camerafollow : MonoBehaviour
 
         transform.position = Vector3.Lerp(
             transform.position,
-            dinamicPos,
+            targetPos,
             followSpeed * Time.deltaTime
             );
 
