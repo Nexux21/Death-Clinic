@@ -17,15 +17,15 @@ public class camera : MonoBehaviour
             -10);
 
         
-        Vector3 mousePos = Camera.main.ScreenToViewportPoint(Mouse.current.position.ReadValue())
+        /*Vector3 mousePos = Camera.main.ScreenToViewportPoint(Mouse.current.position.ReadValue())
             - new Vector3(0.5f, 0.5f, 0.5f);
-        Vector3 DinamicPos = targetPos + mousePos * DinamicCamera;
+        Vector3 DinamicPos = targetPos + mousePos * DinamicCamera;*/
         //<-
 
         
         transform.position = Vector3.Lerp(
             transform.position,
-            DinamicPos,
+            targetPos,
             followCamera * Time.deltaTime
             );
     }
