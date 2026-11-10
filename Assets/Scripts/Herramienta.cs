@@ -1,37 +1,31 @@
 using UnityEngine;
-public class MouseController : MonoBehaviour
+public class Herramienta : MonoBehaviour
 {
-    private static MouseController herramientaActual;
-
+    public static Herramienta HerramientaActual { get; private set; }
+    [SerializeField] public string nombreHerramienta = "Pinzas";
     private Camera cam;
     private Vector3 offset;
-
-    public bool EstaAgarrada => herramientaActual == this;
-
+    public bool EstaAgarrada => HerramientaActual == this;
     void Awake()
     {
         cam = Camera.main;
     }
-
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && herramientaActual == null)
+        if (Input.GetMouseButtonDown(0) && HerramientaActual == null)
         {
             Vector2 mouse = GetMouseWorld();
             Collider2D col = GetComponent<Collider2D>();
-
             if (col != null && col.OverlapPoint(mouse))
             {
-                herramientaActual = this;
+                HerramientaActual = this;
                 offset = transform.position - (Vector3)mouse;
             }
         }
-
         if (Input.GetMouseButtonDown(1) && EstaAgarrada)
         {
-            herramientaActual = null;
+            HerramientaActual = null;
         }
-
         if (EstaAgarrada)
         {
             Vector3 destino = (Vector3)GetMouseWorld() + offset;
