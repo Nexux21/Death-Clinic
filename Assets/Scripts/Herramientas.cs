@@ -1,12 +1,22 @@
 using UnityEngine;
-public class MouseController : MonoBehaviour
+public class Herramienta : MonoBehaviour
 {
-    private static MouseController herramientaActual;
+    // La herramienta que tengo en la mano (otros scripts pueden leerla)
+    public static Herramienta HerramientaActual { get; private set; }
+
+    // 👇 ESTE ES EL BLOQUE NUEVO
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void Reiniciar()
+    {
+        HerramientaActual = null;
+    }
+
+    [SerializeField] public string nombreHerramienta = "Pinzas";
 
     private Camera cam;
     private Vector3 offset;
 
-    public bool EstaAgarrada => herramientaActual == this;
+    public bool EstaAgarrada => HerramientaActual == this;
 
     void Awake()
     {
@@ -15,23 +25,26 @@ public class MouseController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && herramientaActual == null)
+        // CLIC IZQUIERDO: agarrar
+        if (Input.GetMouseButtonDown(0) && HerramientaActual == null)
         {
             Vector2 mouse = GetMouseWorld();
             Collider2D col = GetComponent<Collider2D>();
 
             if (col != null && col.OverlapPoint(mouse))
             {
-                herramientaActual = this;
+                HerramientaActual = this;
                 offset = transform.position - (Vector3)mouse;
             }
         }
 
+        // CLIC DERECHO: soltar
         if (Input.GetMouseButtonDown(1) && EstaAgarrada)
         {
-            herramientaActual = null;
+            HerramientaActual = null;
         }
 
+        // Mientras esté agarrada, sigue al mouse
         if (EstaAgarrada)
         {
             Vector3 destino = (Vector3)GetMouseWorld() + offset;
@@ -39,6 +52,7 @@ public class MouseController : MonoBehaviour
             transform.position = destino;
         }
     }
+
     Vector2 GetMouseWorld()
     {
         return cam.ScreenToWorldPoint(Input.mousePosition);

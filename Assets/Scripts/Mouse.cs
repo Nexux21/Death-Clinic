@@ -2,11 +2,45 @@ using UnityEngine;
 
 public class Mouse : MonoBehaviour
 {
-    [SerializeField] private Texture2D imagenCursor;
-    [SerializeField] private Vector2 puntoActivo = Vector2.zero;
+    [SerializeField] private bool ocultarCursorDelSistema = true;
 
-    void Start()
+    [Header("GameObjects del cursor")]
+    [Tooltip("Se muestra cuando NO llevas nada en la mano")]
+    [SerializeField] private GameObject manoNormal;
+    [Tooltip("Se muestra cuando agarras una herramienta")]
+    [SerializeField] private GameObject manoAgarrando;
+
+    private Camera cam;
+
+    void Awake()
     {
-        Cursor.SetCursor(imagenCursor, puntoActivo, CursorMode.Auto);
+        cam = Camera.main;
+        Cursor.visible = !ocultarCursorDelSistema;
+        ActualizarVisual(false);
+    }
+
+    void Update()
+    {
+        // Seguir al mouse
+        Vector3 pos = cam.ScreenToWorldPoint(Input.mousePosition);
+        pos.z = 0;
+        transform.position = pos;
+
+        // Mostrar un objeto u otro según si tengo una herramienta
+        ActualizarVisual(Herramienta.HerramientaActual != null);
+    }
+
+    void ActualizarVisual(bool agarrando)
+    {
+        if (manoNormal != null && manoNormal.activeSelf == agarrando)
+            manoNormal.SetActive(!agarrando);
+
+        if (manoAgarrando != null && manoAgarrando.activeSelf != agarrando)
+            manoAgarrando.SetActive(agarrando);
+    }
+
+    void OnDestroy()
+    {
+        Cursor.visible = true;
     }
 }
