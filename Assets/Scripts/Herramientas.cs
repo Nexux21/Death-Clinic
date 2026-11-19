@@ -4,19 +4,21 @@ public class Herramienta : MonoBehaviour
     // La herramienta que tengo en la mano (otros scripts pueden leerla)
     public static Herramienta HerramientaActual { get; private set; }
 
-    // 👇 ESTE ES EL BLOQUE NUEVO
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-    private static void Reiniciar()
-    {
-        HerramientaActual = null;
-    }
-
     [SerializeField] public string nombreHerramienta = "Pinzas";
+
+    // Frame en el que se agarró (evita que un mismo clic agarre herramienta y órgano)
+    public int FrameAgarrada { get; private set; }
 
     private Camera cam;
     private Vector3 offset;
 
     public bool EstaAgarrada => HerramientaActual == this;
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void Reiniciar()
+    {
+        HerramientaActual = null;
+    }
 
     void Awake()
     {
@@ -34,6 +36,7 @@ public class Herramienta : MonoBehaviour
             if (col != null && col.OverlapPoint(mouse))
             {
                 HerramientaActual = this;
+                FrameAgarrada = Time.frameCount;
                 offset = transform.position - (Vector3)mouse;
             }
         }

@@ -17,6 +17,7 @@ public static class Escenas
         zonasCompletadas.Clear();
     }
 
+    // Ir a otra escena recordando de dónde vengo y qué zona la activó
     public static void IrAEscena(string escenaDestino, string idZona)
     {
         escenaAnterior = SceneManager.GetActiveScene().name;
@@ -24,6 +25,7 @@ public static class Escenas
         SceneManager.LoadScene(escenaDestino);
     }
 
+    // Volver a la escena anterior, marcando la zona como completada
     public static void Volver()
     {
         if (string.IsNullOrEmpty(escenaAnterior))

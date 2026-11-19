@@ -3,6 +3,7 @@ using UnityEngine;
 public class TerminarOperacion : MonoBehaviour
 {
     // Llama a este método cuando termines la operación
+    // (por ejemplo desde el evento "Al Completar" de ZonaDeposito)
     public void Terminar()
     {
         Escenas.Volver();
