@@ -152,9 +152,6 @@ Transform:
   - {fileID: 1695639004}
   - {fileID: 2008356338}
   - {fileID: 801238446}
-  - {fileID: 198970219}
-  - {fileID: 569796630}
-  - {fileID: 1676114295}
   - {fileID: 1389285106}
   - {fileID: 1689900854}
   - {fileID: 1751471829}
@@ -573,7 +570,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2887626184412786909, guid: 4a7d8e9b3c7cc4e4b9b65212f9fc49a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -593,13 +590,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175603177}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.6934, y: 1.47, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.10727911, w: -0.99422896}
+  m_LocalPosition: {x: -5.54, y: 1.47, z: 0}
   m_LocalScale: {x: 2.4646225, y: 2.3490477, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 43367795}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -12.317}
 --- !u!1 &198970217
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +608,6 @@ GameObject:
   - component: {fileID: 198970219}
   - component: {fileID: 198970218}
   - component: {fileID: 198970221}
-  - component: {fileID: 198970220}
   m_Layer: 0
   m_Name: bolitas de verde limon Acido_0
   m_TagString: Untagged
@@ -687,48 +683,12 @@ Transform:
   m_GameObject: {fileID: 198970217}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.6788, y: -1.5134999, z: 0}
-  m_LocalScale: {x: 2.4428806, y: 2.3490477, z: 1}
+  m_LocalPosition: {x: 0.027712898, y: -0.26002026, z: 0}
+  m_LocalScale: {x: 0.9868746, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 43367795}
+  m_Father: {fileID: 801238446}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &198970220
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198970217}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.21401656, y: -0.4437324}
-  m_Radius: 0.6481073
 --- !u!114 &198970221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1074,7 +1034,6 @@ GameObject:
   - component: {fileID: 569796630}
   - component: {fileID: 569796629}
   - component: {fileID: 569796632}
-  - component: {fileID: 569796631}
   m_Layer: 0
   m_Name: bolitas de dorado Acido_0
   m_TagString: Untagged
@@ -1150,48 +1109,12 @@ Transform:
   m_GameObject: {fileID: 569796628}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.9719, y: -1.4898999, z: 0}
-  m_LocalScale: {x: 2.4428806, y: 2.3490477, z: 1}
+  m_LocalPosition: {x: -0.090693556, y: -0.24997358, z: 0}
+  m_LocalScale: {x: 0.9868746, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 43367795}
+  m_Father: {fileID: 801238446}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &569796631
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 569796628}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.04031521, y: -0.21944985}
-  m_Radius: 0.56697184
 --- !u!114 &569796632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1472,7 +1395,10 @@ Transform:
   m_LocalPosition: {x: -5.7474, y: -0.9027, z: 0}
   m_LocalScale: {x: 2.475371, y: 2.3490477, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 198970219}
+  - {fileID: 569796630}
+  - {fileID: 1676114295}
   m_Father: {fileID: 43367795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &801238447
@@ -1632,7 +1558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaDeposito
   tipoAceptado: 
-  organosNecesarios: 6
+  organosNecesarios: 3
   centrarOrgano: 0
   puntoDeposito: {fileID: 966917145}
   escenaAlCompletar: Victory
@@ -2084,7 +2010,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1477398118069647201, guid: 4a7d8e9b3c7cc4e4b9b65212f9fc49a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2274,7 +2200,6 @@ GameObject:
   - component: {fileID: 1676114295}
   - component: {fileID: 1676114294}
   - component: {fileID: 1676114297}
-  - component: {fileID: 1676114296}
   m_Layer: 0
   m_Name: bolitas de color marron_0
   m_TagString: Untagged
@@ -2350,48 +2275,12 @@ Transform:
   m_GameObject: {fileID: 1676114293}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.6299, y: -1.7483999, z: 0}
-  m_LocalScale: {x: 2.4428806, y: 2.3490477, z: 1}
+  m_LocalPosition: {x: 0.047467563, y: -0.36001822, z: 0}
+  m_LocalScale: {x: 0.9868746, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 43367795}
+  m_Father: {fileID: 801238446}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1676114296
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676114293}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.19872974, y: -0.19898829}
-  m_Radius: 0.7641998
 --- !u!114 &1676114297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2471,7 +2360,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6067696184402263480, guid: 4a7d8e9b3c7cc4e4b9b65212f9fc49a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
