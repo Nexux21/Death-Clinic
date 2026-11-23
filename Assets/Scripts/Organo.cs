@@ -64,6 +64,9 @@ public class Organo : MonoBehaviour
         if (!Input.GetMouseButtonDown(0)) return;
         if (organoActual != null) return;
 
+        // NUEVO: no se puede agarrar nada mientras queden huesos
+        if (Hueso.QuedanHuesos) return;
+
         Herramienta h = Herramienta.HerramientaActual;
         if (h == null) return;
         if (h.FrameAgarrada == Time.frameCount) return;
