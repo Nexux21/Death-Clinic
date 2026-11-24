@@ -1774,6 +1774,7 @@ MonoBehaviour:
   FeedbacksList:
   - rid: 3140200230406586368
   - rid: 3140200230406586369
+  - rid: 3140200248086102088
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   RestoreInitialValuesOnDisable: 0
@@ -1943,6 +1944,95 @@ MonoBehaviour:
         FlashAlpha: 0.45
         FlashID: 0
         TargetFlash: {fileID: 9028172}
+    - rid: 3140200248086102088
+      type: {class: MMF_InstantiateObject, ns: MoreMountains.Feedbacks, asm: MoreMountains.Tools}
+      data:
+        Active: 1
+        UniqueID: -1189454196
+        Label: Instantiate Object
+        OriginalLabel: Instantiate Object
+        ChannelMode: 0
+        Channel: 0
+        MMChannelDefinition: {fileID: 0}
+        Chance: 100
+        Timing:
+          TimescaleMode: 0
+          ExcludeFromHoldingPauses: 0
+          ContributeToTotalDuration: 1
+          InitialDelay: 0
+          CooldownDuration: 0
+          InterruptsOnStop: 1
+          NumberOfRepeats: 0
+          RepeatForever: 0
+          DelayBetweenRepeats: 1
+          PlayCount: 0
+          LimitPlayCount: 0
+          MaxPlayCount: 3
+          SetPlayCountToZeroOnReset: 0
+          MMFeedbacksDirectionCondition: 0
+          PlayDirection: 0
+          ConstantIntensity: 0
+          UseIntensityInterval: 0
+          IntensityIntervalMin: 0
+          IntensityIntervalMax: 0
+          Sequence: {fileID: 0}
+          TrackID: 0
+          Quantized: 0
+          TargetBPM: 120
+        AutomatedTargetAcquisition:
+          Mode: 0
+          ChildIndex: 0
+        RandomizeOutput: 0
+        RandomMultiplier: {x: 0.8, y: 1}
+        RandomizeDuration: 0
+        RandomDurationMultiplier: {x: 0.5, y: 2}
+        UseRange: 0
+        RangeDistance: 5
+        UseRangeFalloff: 0
+        RangeFalloff:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        RemapRangeFalloff: {x: 0, y: 1}
+        AutomaticShakerSetupButton:
+          ButtonText: 
+        Owner: {fileID: 690192798}
+        DebugActive: 0
+        GameObjectToInstantiate: {fileID: 3696379892761670711, guid: 0c9b12d08a4b218429d41e01552359b7, type: 3}
+        PositionMode: 0
+        AlsoApplyRotation: 0
+        AlsoApplyScale: 0
+        TargetTransform: {fileID: 0}
+        TargetPosition: {x: 0, y: 0, z: 0}
+        PositionOffset: {x: 0, y: 0, z: 0}
+        RandomizePosition: 1
+        RandomizedPositionMin: {x: 0, y: 0, z: 0}
+        RandomizedPositionMax: {x: 1, y: 1, z: 1}
+        ParentTransform: {fileID: 0}
+        CreateObjectPool: 1
+        ObjectPoolSize: 5
+        MutualizePools: 0
+        PoolParentTransform: {fileID: 0}
 --- !u!4 &690192799
 Transform:
   m_ObjectHideFlags: 0
@@ -1952,7 +2042,7 @@ Transform:
   m_GameObject: {fileID: 690192797}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 197.27133, y: 108.90278, z: 0}
+  m_LocalPosition: {x: -1.53, y: 0.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3758,63 +3848,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.02, y: 0.96}
   m_SizeDelta: {x: 3.0014, y: 0.9204}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &1993303195
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 148038209109406453, guid: 2b1f5130ad304f348a6fda37c3b3c387, type: 3}
-      propertyPath: m_Name
-      value: 'Sangre '
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598995362705955644, guid: 2b1f5130ad304f348a6fda37c3b3c387, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 259.2966
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598995362705955644, guid: 2b1f5130ad304f348a6fda37c3b3c387, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 146.44023
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598995362705955644, guid: 2b1f5130ad304f348a6fda37c3b3c387, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598995362705955644, guid: 2b1f5130ad304f348a6fda37c3b3c387, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598995362705955644, guid: 2b1f5130ad304f348a6fda37c3b3c387, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598995362705955644, guid: 2b1f5130ad304f348a6fda37c3b3c387, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598995362705955644, guid: 2b1f5130ad304f348a6fda37c3b3c387, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598995362705955644, guid: 2b1f5130ad304f348a6fda37c3b3c387, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598995362705955644, guid: 2b1f5130ad304f348a6fda37c3b3c387, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598995362705955644, guid: 2b1f5130ad304f348a6fda37c3b3c387, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2b1f5130ad304f348a6fda37c3b3c387, type: 3}
 --- !u!1 &2008356336
 GameObject:
   m_ObjectHideFlags: 0
@@ -3977,4 +4010,3 @@ SceneRoots:
   - {fileID: 690192799}
   - {fileID: 1524238137}
   - {fileID: 914866718}
-  - {fileID: 1993303195}
