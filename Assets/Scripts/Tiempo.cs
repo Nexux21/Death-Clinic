@@ -60,7 +60,7 @@ public class Tiempo : MonoBehaviour
             tiempoRestante = 0f;
             corriendo = false;
             ActualizarVisual();
-            SceneManager.LoadScene(escenaGameOver);
+            Escenas.IrAGameOver(escenaGameOver);
             return;
         }
 

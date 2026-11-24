@@ -21,9 +21,16 @@ public class Hueso : MonoBehaviour
     [SerializeField] private float temblor = 0.05f;
     [SerializeField] private UnityEvent alDesintegrarse;
 
+    [Header("Identificación")]
+    [Tooltip("Único por hueso (si lo dejas vacío usa el nombre del objeto)")]
+    [SerializeField] private string idHueso = "";
+
     private Collider2D col;
     private SpriteRenderer sr;
     private bool desintegrando;
+    private bool yaDestruido;
+
+    private string IdFinal => idHueso != "" ? idHueso : gameObject.name;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     private static void Reiniciar()
@@ -36,10 +43,18 @@ public class Hueso : MonoBehaviour
         col = GetComponent<Collider2D>();
         sr = GetComponent<SpriteRenderer>();
         if (senal != null) senal.SetActive(false);
+
+        // Si ya lo destruí antes de salir de esta escena, no debe volver a aparecer
+        if (Escenas.HuesoYaDestruido(IdFinal))
+        {
+            yaDestruido = true;
+            Destroy(gameObject);
+        }
     }
 
     void OnEnable()
     {
+        if (yaDestruido) return;
         Todos.Add(this);
     }
 
@@ -50,7 +65,7 @@ public class Hueso : MonoBehaviour
 
     void Update()
     {
-        if (desintegrando) return;
+        if (desintegrando || yaDestruido) return;
 
         bool herramientaCerca = HayHerramientaCorrecta();
 
@@ -60,6 +75,7 @@ public class Hueso : MonoBehaviour
         if (herramientaCerca && Input.GetKeyDown(tecla))
             StartCoroutine(Desintegrar());
     }
+
     bool HayHerramientaCorrecta()
     {
         Herramienta herramienta = Herramienta.HerramientaActual;
@@ -78,6 +94,9 @@ public class Hueso : MonoBehaviour
         desintegrando = true;
         if (senal != null) senal.SetActive(false);
         col.enabled = false;
+
+        // Se registra ya, para que cuente como destruido aunque cambies de escena a mitad
+        Escenas.RegistrarHuesoDestruido(IdFinal);
 
         Vector3 posInicial = transform.position;
         Vector3 escalaInicial = transform.localScale;

@@ -77,7 +77,7 @@ public class Oxigeno : MonoBehaviour
             oxigenoActual = 0f;
             activo = false;
             ActualizarVisual();
-            SceneManager.LoadScene(escenaGameOver);
+            Escenas.IrAGameOver(escenaGameOver);
             return;
         }
 
